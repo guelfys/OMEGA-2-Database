@@ -1,2 +1,2 @@
 # OMEGA-2-Database
-Repo para subir todo lo relacionado a la BBDD de OMEGA
+Acá están todos los scripts tanto para la creación de la base como para popular las tablas bases.
