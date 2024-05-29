@@ -8,5 +8,7 @@ INSERT INTO parametros(codigo, descripcion, valor)VALUES(N'selectsPercep', N'Lis
 INSERT INTO parametros(codigo, descripcion, valor)VALUES(N'selectsPercepProv', N'Listado de percepciones', N'[{"id":1,"description":"IVA 21%"},{"id":2,"description":"IVA 27%"}]');
 INSERT INTO parametros(codigo, descripcion, valor)VALUES(N'selectsTarifas', N'Listado de tarifas', N'[{"id":1,"description":"T1"},{"id":2,"description":"T2"},{"id":3,"description":"T3"},{"id":4,"description":"T4"}]');
 INSERT INTO parametros(codigo, descripcion, valor)VALUES(N'selectsAnioCuota', N'Listado de anio cuota', N'[{"id":1,"description":"2023"},{"id":2,"description":"2024"},{"id":3,"description":"2025"},{"id":4,"description":"2026"}]');
-INSERT INTO parametros(codigo, descripcion, valor)VALUES(N'SitioEmpresa', NULL, N'370');
-GO
+INSERT INTO parametros(codigo, descripcion, valor)VALUES(N'SitioEmpresa', NULL, N'0370');
+INSERT INTO parametros(codigo, descripcion, valor)VALUES(N'UsuarioSitio', N'', N'LoaderOMEGA');
+INSERT INTO parametros(codigo, descripcion, valor)VALUES(N'TipoDeServicio', N'', N'5');
+INSERT INTO parametros(codigo, descripcion, valor)VALUES(N'pathFacturaFisica', N'Ruta donde se encuentran los .pdf de las facturas procesadas por OMEGA', N'cloudwing04\RPA\pdf');
