@@ -1,4 +1,4 @@
-INSERT INTO OMEGA.dbo.grupo
+INSERT INTO grupo
 (codigo, nombre)
 VALUES
 ('OMEGA_SERVICIOS', 'Los usuarios que tengan asociado este perfil podrán acceder sólo a las opciones de los menúes de OMEGA que correspondan a la gestión, extremo a extremo, de las facturas de servicios públicos.'),

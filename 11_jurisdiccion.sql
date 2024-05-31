@@ -1,4 +1,4 @@
-INSERT INTO OMEGA.dbo.jurisdiccion
+INSERT INTO jurisdiccion
 (nombre)
 VALUES 
 ('Buenos Aires'),

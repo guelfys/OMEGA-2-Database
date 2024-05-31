@@ -1,4 +1,4 @@
-INSERT INTO dbo.funcionalidad (nombre, categoria, descripcion, ruta) VALUES
+INSERT INTO funcionalidad (nombre, categoria, descripcion, ruta) VALUES
     ('Medio pago', NULL, NULL, '/mediopago'),
     ('Empresa', NULL, NULL, '/empresa'),
     ('Tipo de servicio', NULL, NULL, '/tipodeservicio'),
@@ -14,5 +14,4 @@ INSERT INTO dbo.funcionalidad (nombre, categoria, descripcion, ruta) VALUES
     ('Conciliación de pagos', NULL, NULL, '/conciliaciondepagos'),
     ('Reportes', NULL, NULL, '/reportes'),
     ('Gestión de servicios', NULL, NULL, '/gestiondeservicios');
-	
 GO
