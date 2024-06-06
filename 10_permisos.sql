@@ -1,4 +1,4 @@
-INSERT INTO permiso (grupoId, funcionalidadId)
+INSERT INTO omega.permiso (grupoId, funcionalidadId)
 VALUES
 (5, 1),
 (5, 2),

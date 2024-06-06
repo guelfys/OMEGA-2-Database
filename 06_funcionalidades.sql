@@ -1,4 +1,4 @@
-INSERT INTO funcionalidad (nombre, categoria, descripcion, ruta) VALUES
+INSERT INTO omega.funcionalidad (nombre, categoria, descripcion, ruta) VALUES
     ('Medio pago', NULL, NULL, '/mediopago'),
     ('Empresa', NULL, NULL, '/empresa'),
     ('Tipo de servicio', NULL, NULL, '/tipodeservicio'),

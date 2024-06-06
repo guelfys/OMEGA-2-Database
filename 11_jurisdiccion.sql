@@ -1,4 +1,4 @@
-INSERT INTO jurisdiccion
+INSERT INTO omega.jurisdiccion
 (nombre)
 VALUES 
 ('Buenos Aires'),

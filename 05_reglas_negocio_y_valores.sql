@@ -29,7 +29,7 @@ INSERT INTO regla_de_negocio (tipoRegla,idEntidad,nombre,servicio,descripcion,fe
 go
 -- Valores configurables de las reglas de negocio --
 
-INSERT INTO valor_regla (atributo,valor,reglaDeNegocioId) VALUES
+INSERT INTO omega.valor_regla (atributo,valor,reglaDeNegocioId) VALUES
 	 (N'valorTablaValores',N'tarifaServicio',(SELECT id FROM regla_de_negocio WHERE nombre = 'TarifaServicio')),
 	 (N'valorTablaValores',N'const residencial = "T1R"',(SELECT id FROM regla_de_negocio WHERE nombre = 'TarifaResidencial')),
 	 (N'valorTablaValores',N'const valorCliente = null',(SELECT id FROM regla_de_negocio WHERE nombre = 'Cliente')),
