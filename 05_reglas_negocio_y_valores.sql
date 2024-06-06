@@ -53,21 +53,6 @@ INSERT INTO testeo_desa.dbo.regla_de_negocio (tipoRegla,idEntidad,nombre,servici
 go
 -- Valores configurables de las reglas de negocio --
 
-INSERT INTO omega.valor_regla (atributo,valor,reglaDeNegocioId) VALUES
-	 (N'valorTablaValores',N'tarifaServicio',(SELECT id FROM regla_de_negocio WHERE nombre = 'TarifaServicio')),
-	 (N'valorTablaValores',N'const residencial = "T1R"',(SELECT id FROM regla_de_negocio WHERE nombre = 'TarifaResidencial')),
-	 (N'valorTablaValores',N'const valorCliente = null',(SELECT id FROM regla_de_negocio WHERE nombre = 'Cliente')),
-	 (N'valorTablaValores',N'const valorMedidor = null',(SELECT id FROM regla_de_negocio WHERE nombre = 'Medidor')),
-	 (N'valorTablaValores',N'const consumoNoPermitido = 0',(SELECT id FROM regla_de_negocio WHERE nombre = 'ConsumoNoPermitido')),
-	 (N'valorTablaValores',N'const tarifaPermitida = "T1"',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaPuntaCero')),
-	 (N'valorTablaValores',N'const tarifaPermitida = "T1"',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraPuntaCero')),
-	 (N'valorTablaValores',N'const fechaDesdeMes = 12',(SELECT id FROM regla_de_negocio WHERE nombre = 'FechaFacturacionHastaMenorActual')),
-	 (N'valorTablaValores',N'const fechaHastaMes = 12',(SELECT id FROM regla_de_negocio WHERE nombre = 'FechaHastaMayorDesde')),
-	 (N'valorTablaValores',N'const fechaDesdeAnio = 2021',(SELECT id FROM regla_de_negocio WHERE nombre = 'CoherenciaFechaDesdeMes')),
-	 (N'valorTablaValores',N'const anioFacturacionHasta = 2021',(SELECT id FROM regla_de_negocio WHERE nombre = 'CoherenciaFechaHastaMes')),
-	 (N'valorTablaValores',N'const valorFechaRecurso = null',(SELECT id FROM regla_de_negocio WHERE nombre = 'FechaDeRecursoVacia')),
-	 (N'valorTablaValores',N'const valorTarifa = "t3"',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaEnPuntaVaciaT3')),
-	 (N'valorTablaValores',N'const valorTarifa = "t3"',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraPuntaVaciaT3'));
 
 INSERT INTO testeo_desa.dbo.valor_regla (atributo,valor,reglaDeNegocioId) VALUES
 	 (N'valorTablaValores',N'const residencial = "t1r"',(SELECT id FROM regla_de_negocio WHERE nombre = 'TarifaResidencial')),
