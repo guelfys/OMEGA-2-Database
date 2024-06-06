@@ -1,7 +1,7 @@
 
 -- Reglas de negocio --
 
-INSERT INTO testeo_desa.dbo.regla_de_negocio (tipoRegla,idEntidad,nombre,servicio,descripcion,fechaAlta,fechaBaja,estado,controlFlag,serviciosPublicos,energia,obligatorioCumplimiento) VALUES
+INSERT INTO omega.regla_de_negocio (tipoRegla,idEntidad,nombre,servicio,descripcion,fechaAlta,fechaBaja,estado,controlFlag,serviciosPublicos,energia,obligatorioCumplimiento) VALUES
 	 (N'if (tarifa != null && tarifa.toLowerCase().startsWith(residencial)){ reglasEncontradas.push(idReglasDeNegocio)}',1,N'TarifaResidencial',NULL,N'Tarifa es residencial','2023-12-01 00:00:00.0','2023-12-01 00:00:00.0',0,N'tarifa',NULL,NULL,1),
 	 (N'if (cliente == valorCliente) { reglasEncontradas.push(idReglasDeNegocio) }',1,N'Cliente',NULL,N'La factura no tiene cliente','2023-12-01 00:00:00.0','2023-12-01 00:00:00.0',0,N'cliente',NULL,NULL,1),
 	 (N'if (medidor == valorMedidor) { reglasEncontradas.push(idReglasDeNegocio) }',1,N'Medidor',NULL,N'La factura no tiene medidor','2023-12-01 00:00:00.0','2023-12-01 00:00:00.0',0,N'medidor',NULL,NULL,1),
@@ -54,33 +54,34 @@ go
 -- Valores configurables de las reglas de negocio --
 
 
-INSERT INTO testeo_desa.dbo.valor_regla (atributo,valor,reglaDeNegocioId) VALUES
-	 (N'valorTablaValores',N'const residencial = "t1r"',(SELECT id FROM regla_de_negocio WHERE nombre = 'TarifaResidencial')),
-	 (N'valorTablaValores',N'const valorCliente = null',(SELECT id FROM regla_de_negocio WHERE nombre = 'Cliente')),
-	 (N'valorTablaValores',N'const valorMedidor = null',(SELECT id FROM regla_de_negocio WHERE nombre = 'Medidor')),
-	 (N'valorTablaValores',N'const consumoNoPermitido = 0',(SELECT id FROM regla_de_negocio WHERE nombre = 'ConsumoNoPermitido')),
-	 (N'valorTablaValores',N'const tarifaPermitida = "t1"',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaPuntaCero')),
-	 (N'valorTablaValores',N'const tarifaPermitida = "t1"',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraPuntaCero')),
-	 (N'valorTablaValores',N'const fechaDesdeMes = 12',(SELECT id FROM regla_de_negocio WHERE nombre = 'coherenciaFechaDesdeMes')),
-	 (N'valorTablaValores',N'const fechaHastaMes = 12',(SELECT id FROM regla_de_negocio WHERE nombre = 'coherenciaFechaHastaMes')),
-	 (N'valorTablaValores',N'const fechaDesdeAnio = 2021',(SELECT id FROM regla_de_negocio WHERE nombre = 'coherenciaFechaDesdeAnio')),
-	 (N'valorTablaValores',N'const fechaHastaAnio = 2021',(SELECT id FROM regla_de_negocio WHERE nombre = 'coherenciaFechaHastaAnio')),
-	 (N'valorTablaValores',N'const valorFechaRecurso = null',(SELECT id FROM regla_de_negocio WHERE nombre = 'FechaDeRecursoVacia')),
-	 (N'valorTablaValores',N'const valorTarifa = "t3"',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaEnPuntaVaciaT3')),
-	 (N'valorTablaValores',N'const valorTarifa = "t3"',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraPuntaVaciaT3')),
-	 (N'valorTablaValores',N'const porcentajeConsumo = 15',(SELECT id FROM regla_de_negocio WHERE nombre = 'consumoInvalido')),
-	 (N'valorTablaValores',N'const valorPotenciaContratadaT1 = 10',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaContratadaT1Invalida')),
-	 (N'valorTablaValores',N'const valorPotenciaContratadaT2Menor = 10',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaContratadaT2Invalida')),
-	 (N'valorTablaValores',N'const valorPotenciaContratadaT2Mayor = 50',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaContratadaT2Invalida')),
-	 (N'valorTablaValores',N'const valorPotenciaContratadaT3 = 50',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaContratadaT3Invalida')),
-	 (N'valorTablaValores',N'const valorPotenciaContratadaT4 = 30',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaContratadaT4Invalida')),
-	 (N'valorTablaValores',N'const valorPotenciaRegistradaEnPuntaT1 = 10',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaEnPuntaEnPuntaT1Invalida')),
-	 (N'valorTablaValores',N'const valorPotenciaRegistradaEnPuntaT2Menor = 10',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaEnPuntaT2Invalida')),
-	 (N'valorTablaValores',N'const valorPotenciaRegistradaEnPuntaT2Mayor = 50',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaEnPuntaT2Invalida2')),
-	 (N'valorTablaValores',N'const valorPotenciaRegistradaEnPuntaT3 = 50',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaEnPuntaT3Invalida')),
-	 (N'valorTablaValores',N'const valorPotenciaRegistradaEnPuntaT4 = 30',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaEnPuntaT4Invalida')),
-	 (N'valorTablaValores',N'const valorPotenciaRegistradaFueraDePuntaT1 = 10',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraDePuntaT1Invalida')),
-	 (N'valorTablaValores',N'const valorPotenciaRegistradaFueraDePuntaT2Menor = 10',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraDePuntaT2Invalida')),
-	 (N'valorTablaValores',N'const valorPotenciaRegistradaFueraDePuntaT2Mayor = 50',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraDePuntaT2Invalida')),
-	 (N'valorTablaValores',N'const valorPotenciaRegistradaFueraDePuntaT3 = 50',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraDePuntaT3Invalida')),
-	 (N'valorTablaValores',N'const valorPotenciaRegistradaFueraDePuntaT4 = 30',(SELECT id FROM regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraDePuntaT4Invalida')),
+INSERT INTO omega.valor_regla (atributo,valor,reglaDeNegocioId) VALUES
+	 (N'valorTablaValores',N'const residencial = "t1r"',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'TarifaResidencial')),
+	 (N'valorTablaValores',N'const valorCliente = null',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'Cliente')),
+	 (N'valorTablaValores',N'const valorMedidor = null',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'Medidor')),
+	 (N'valorTablaValores',N'const consumoNoPermitido = 0',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'ConsumoNoPermitido')),
+	 (N'valorTablaValores',N'const tarifaPermitida = "t1"',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaPuntaCero')),
+	 (N'valorTablaValores',N'const tarifaPermitida = "t1"',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraPuntaCero')),
+	 (N'valorTablaValores',N'const fechaDesdeMes = 12',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'coherenciaFechaDesdeMes')),
+	 (N'valorTablaValores',N'const fechaHastaMes = 12',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'coherenciaFechaHastaMes')),
+	 (N'valorTablaValores',N'const fechaDesdeAnio = 2021',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'coherenciaFechaDesdeAnio')),
+	 (N'valorTablaValores',N'const fechaHastaAnio = 2021',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'coherenciaFechaHastaAnio')),
+	 (N'valorTablaValores',N'const valorFechaRecurso = null',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'FechaDeRecursoVacia')),
+	 (N'valorTablaValores',N'const valorTarifa = "t3"',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaEnPuntaVaciaT3')),
+	 (N'valorTablaValores',N'const valorTarifa = "t3"',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraPuntaVaciaT3')),
+	 (N'valorTablaValores',N'const porcentajeConsumo = 15',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'consumoInvalido')),
+	 (N'valorTablaValores',N'const valorPotenciaContratadaT1 = 10',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaContratadaT1Invalida')),
+	 (N'valorTablaValores',N'const valorPotenciaContratadaT2Menor = 10',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaContratadaT2Invalida')),
+	 (N'valorTablaValores',N'const valorPotenciaContratadaT2Mayor = 50',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaContratadaT2Invalida2')),
+	 (N'valorTablaValores',N'const valorPotenciaContratadaT3 = 50',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaContratadaT3Invalida')),
+	 (N'valorTablaValores',N'const valorPotenciaContratadaT4 = 30',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaContratadaT4Invalida')),
+	 (N'valorTablaValores',N'const valorPotenciaRegistradaEnPuntaT1 = 10',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaEnPuntaEnPuntaT1Invalida')),
+	 (N'valorTablaValores',N'const valorPotenciaRegistradaEnPuntaT2Menor = 10',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaEnPuntaT2Invalida')),
+	 (N'valorTablaValores',N'const valorPotenciaRegistradaEnPuntaT2Mayor = 50',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaEnPuntaT2Invalida2')),
+	 (N'valorTablaValores',N'const valorPotenciaRegistradaEnPuntaT3 = 50',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaEnPuntaT3Invalida')),
+	 (N'valorTablaValores',N'const valorPotenciaRegistradaEnPuntaT4 = 30',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaEnPuntaT4Invalida')),
+	 (N'valorTablaValores',N'const valorPotenciaRegistradaFueraDePuntaT1 = 10',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraDePuntaT1Invalida')),
+	 (N'valorTablaValores',N'const valorPotenciaRegistradaFueraDePuntaT2Menor = 10',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraDePuntaT2Invalida')),
+	 (N'valorTablaValores',N'const valorPotenciaRegistradaFueraDePuntaT2Mayor = 50',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraDePuntaT2Invalida2')),
+	 (N'valorTablaValores',N'const valorPotenciaRegistradaFueraDePuntaT3 = 50',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraDePuntaT3Invalida')),
+	 (N'valorTablaValores',N'const valorPotenciaRegistradaFueraDePuntaT4 = 30',(SELECT id FROM omega.regla_de_negocio WHERE nombre = 'PotenciaRegistradaFueraDePuntaT4Invalida'))
+Go

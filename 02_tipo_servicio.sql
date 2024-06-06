@@ -1,4 +1,3 @@
-INSERT INTO omega.tipo_de_servicio ([nombre],[codServicio]) VALUES ('No relacionado', NULL)
 INSERT INTO omega.tipo_de_servicio (codServicio, nombre) VALUES (14, 'Alquiler edificio');
 INSERT INTO omega.tipo_de_servicio (codServicio, nombre) VALUES (15, 'Alquiler cochera');
 INSERT INTO omega.tipo_de_servicio (codServicio, nombre) VALUES (5, 'Energia');
